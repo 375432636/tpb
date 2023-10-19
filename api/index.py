@@ -39,7 +39,7 @@ def tpb():
     JSON = search(data)
     JSON = json.dumps(JSON)
     # return jsonify(JSON)
-    with open("./templates/table.html","r") as f:
+    with open("./api/templates/table.html","r") as f:
         text = f.read()
 
     return text.replace("{{tableData}}",JSON)
