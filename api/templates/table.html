@@ -19,7 +19,11 @@
       label="name"
       sortable
       width="580"
-    > </el-table-column>
+    >
+      <template slot-scope="scope2">
+        <a :href="'https://thepiratebay.org/description.php?id='+scope2.row.id" target="_blank" class="buttonText">{{scope2.row.name}}</a>
+      </template>
+    </el-table-column>
     <el-table-column
       prop="leechers"
       label="leechers"
