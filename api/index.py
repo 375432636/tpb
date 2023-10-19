@@ -24,9 +24,9 @@ def search(data):
     r = requests.get(url)
     JSON = r.json()
     if name_filter:
-        JSON = [i for i in JSON if name_filter in i['name']]
+        JSON = [i for i in JSON if name_filter.lower() in i['name'].lower()]
     if user_filter:
-        JSON = [i for i in JSON if user_filter in i['username']]
+        JSON = [i for i in JSON if user_filter.lower() in i['username'].lower()]
     for i in JSON:
         magnet_link =f"magnet:?xt=urn:btih:{i['info_hash']}&dn={i['name']}{tracker}"
         i["magnet_link"] = magnet_link
