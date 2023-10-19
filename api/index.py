@@ -30,6 +30,7 @@ def search(data):
     for i in JSON:
         magnet_link =f"magnet:?xt=urn:btih:{i['info_hash']}&dn={i['name']}{tracker}"
         i["magnet_link"] = magnet_link
+        i["magnet_link_short"] = f"magnet:?xt=urn:btih:{i['info_hash']}"
         i['added'] = datetime.fromtimestamp(int(i['added'])).strftime("%Y-%m-%d")
     return JSON
 
